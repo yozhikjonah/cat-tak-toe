@@ -70,10 +70,16 @@ print(size)
 
 height=size[0]
 width=size[1]
-cv2.line(img, (204, 0), (204, 408), (0, 255, 0))
-cv2.line(img, (408, 0), (408, 408), (0, 255, 0))
-cv2.line(img, (0, 272), (612, 272), (0, 255, 0))
-cv2.line(img, (0, 136), (612, 136), (0, 255, 0))
+
+x1 = int(width/3)
+print(x1) # should be 204
+x2 = int(x1+x1)
+print(x2) # should be 408
+
+cv2.line(img, (x1, 0), (x1, height), (0, 255, 0))
+cv2.line(img, (x2, 0), (x2, height), (0, 255, 0))
+cv2.line(img, (0, 272), (width, 272), (0, 255, 0))
+cv2.line(img, (0, 136), (width, 136), (0, 255, 0))
 
 # show image again with grid lines
 cv2.imshow("cat", img)
